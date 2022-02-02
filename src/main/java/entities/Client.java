@@ -11,7 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -26,6 +28,9 @@ public class Client implements BaseEntity<Long> {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "codigo_cliente")
   private Long id;
+
+  @OneToMany(mappedBy = "client")
+  private List<Freight> freight;
 
   @Column(name = "nome", length = 30)
   private String name;
