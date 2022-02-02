@@ -11,7 +11,7 @@ public class Main {
 
     transaction.begin();
 
-    var client = new Client(null, "Daniel Rocha", "Rua S", "+55 98 999999999");
+    var client = new Client(null, null, "Daniel Rocha", "Rua S", "+55 98 999999999");
 
     var clientRepository = new ClientRepository<Client, Long>(manager, Client.class);
 
