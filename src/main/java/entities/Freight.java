@@ -1,18 +1,14 @@
 package entities;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 import java.math.BigDecimal;
 
@@ -29,19 +25,25 @@ public class Freight implements BaseEntity<Long> {
 
   @ManyToOne
   @JoinColumn(name = "codigo_cidade", nullable = false)
+  @NotNull
   private City city;
 
   @ManyToOne
   @JoinColumn(name = "codigo_cliente", nullable = false)
+  @NotNull
   private Client client;
 
   @Column(name = "descricao", length = 30, nullable = false)
+  @NotBlank
+  @Size(max = 30)
   private String description;
 
   @Column(name = "peso", precision = 4, nullable = false)
+  @NotNull
   private BigDecimal weight;
 
   @Column(name = "valor", precision = 4, nullable = false)
+  @NotNull
   private BigDecimal price;
 
 }

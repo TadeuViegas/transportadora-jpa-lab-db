@@ -1,11 +1,10 @@
 package repositories;
 
 
-import javax.persistence.EntityManager;
-import java.io.Serializable;
+import jakarta.persistence.EntityManager;
 
-public class ClientRepository<T, ID extends Serializable>  extends DAO<T, ID> {
-  public ClientRepository(EntityManager manager,  Class<T> clazz) {
+public class ClientRepository<T, ID> extends DAO<T, ID> {
+  public ClientRepository(EntityManager manager, Class<T> clazz) {
     super(manager, clazz);
   }
 }

@@ -1,6 +1,6 @@
 package repositories;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 public class CityRepository <T, ID> extends DAO<T, ID>{
   public CityRepository(EntityManager manager, Class<T> clazz) {

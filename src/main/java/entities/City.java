@@ -1,16 +1,12 @@
 package entities;
 
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import java.math.BigDecimal;
 
@@ -27,9 +23,11 @@ public class City implements BaseEntity<Long> {
   private Long id;
 
   @Column(name = "nome", length = 30)
+  @Size(max = 30)
   private String name;
 
   @Column(name = "uf", length = 30)
+  @Size(max = 30)
   private String uf;
 
   @Column(name = "taxa", precision = 4)

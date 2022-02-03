@@ -1,18 +1,14 @@
 package entities;
 
+import jakarta.persistence.*;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import java.util.List;
 
 @Entity
@@ -33,12 +29,15 @@ public class Client implements BaseEntity<Long> {
   private List<Freight> freight;
 
   @Column(name = "nome", length = 30)
+  @NotBlank
   private String name;
 
   @Column(name = "endereco", length = 30)
+  @NotBlank
   private String address;
 
   @Column(name = "telefone", length = 30)
+  @NotBlank
   private String phoneNumber;
 
 }
