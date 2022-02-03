@@ -35,7 +35,6 @@
       <property
           name="jakarta.persistence.sql-load-script-source"
           value="META-INF/sql/import.sql" />
-
       <property
           name="jakarta.persistence.jdbc.url"
           value="jdbc:mysql://localhost:3306/transportadora?createDatabaseIfNotExist=True" />
@@ -54,9 +53,7 @@
   </persistence-unit>
 
   <persistence-unit name="transportadora_hibernate" transaction-type="RESOURCE_LOCAL">
-
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
     <properties>
 
       <!-- hibernate configuration -->
@@ -83,7 +80,6 @@
       <property
           name="jakarta.persistence.sql-load-script-source"
           value="META-INF/sql/import.sql" />
-
       <property
           name="jakarta.persistence.jdbc.url"
           value="jdbc:mysql://localhost:3306/transportadora?createDatabaseIfNotExist=True" />
