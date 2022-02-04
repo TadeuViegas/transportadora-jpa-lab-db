@@ -1,10 +1,11 @@
 package repositories;
 
 
+import entities.Client;
 import jakarta.persistence.EntityManager;
 
-public class ClientRepository<T, ID> extends DAO<T, ID> {
-  public ClientRepository(EntityManager manager, Class<T> clazz) {
-    super(manager, clazz);
+public class ClientRepository extends DAO<Client, Long> {
+  public ClientRepository(EntityManager manager) {
+    super(manager, Client.class);
   }
 }

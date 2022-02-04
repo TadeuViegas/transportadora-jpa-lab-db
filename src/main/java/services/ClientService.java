@@ -14,7 +14,7 @@ import java.util.Set;
 
 
 public class ClientService {
-  private final ClientRepository<Client, Long> clientRepository;
+  private final ClientRepository clientRepository;
 
   public ClientService(ClientRepository clientRepository) {
     this.clientRepository = clientRepository;

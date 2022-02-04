@@ -14,7 +14,7 @@ public class Main {
 //
     var client = new Client(null, null, "", "Rua S", "+55 98 999999999");
 
-    var clientRepository = new ClientRepository<Client, Long>(manager, Client.class);
+    var clientRepository = new ClientRepository(manager);
     var clientService = new ClientService(clientRepository);
 
     var clientSave = clientService.saveClient(client);
