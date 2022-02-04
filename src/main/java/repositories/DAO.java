@@ -44,9 +44,9 @@ public abstract class DAO<T, ID> {
     var target = (BaseEntity) entity;
 
     if( Objects.isNull(target.getId()) )
-      this.manager.persist(entity);
+      manager.persist(entity);
     else
-      entity = this.manager.merge(entity);
+      entity = manager.merge(entity);
 
     return entity;
   }
