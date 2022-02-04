@@ -25,7 +25,7 @@ public class Client implements BaseEntity<Long> {
   @Column(name = "codigo_cliente")
   private Long id;
 
-  @OneToMany(mappedBy = "client")
+  @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
   private List<Freight> freight;
 
   @Column(name = "nome", length = 30)
