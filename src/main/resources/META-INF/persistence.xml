@@ -80,7 +80,7 @@
           value="META-INF/sql/import.sql" />
       <property
           name="jakarta.persistence.jdbc.url"
-          value="jdbc:mysql://localhost:3307/transportadora?createDatabaseIfNotExist=True" />
+          value="jdbc:mysql://localhost:3306/transportadora?createDatabaseIfNotExist=True" />
       <property
           name="jakarta.persistence.jdbc.driver"
           value="com.mysql.cj.jdbc.Driver" />
