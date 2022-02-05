@@ -38,4 +38,8 @@ public class ClientService {
 
     return Optional.ofNullable(clientRepository.save(client));
   }
+
+  public Optional<Client> findClientById(Long id) {
+    return clientRepository.findById(id);
+  }
 }

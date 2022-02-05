@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 import java.math.BigDecimal;
@@ -18,10 +15,21 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Freight implements BaseEntity<ClientCityPK> {
+public class Freight implements BaseEntity<Long> {
 
-  @EmbeddedId
-  private ClientCityPK id = new ClientCityPK();
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @ManyToOne
+  @JoinColumn(name = "codigo_cidade", nullable = false)
+  @NotNull
+  private City city;
+
+  @ManyToOne
+  @JoinColumn(name = "codigo_cliente", nullable = false)
+  @NotNull
+  private Client client;
 
   @Column(name = "descricao", length = 30, nullable = false)
   @NotBlank
@@ -36,4 +44,13 @@ public class Freight implements BaseEntity<ClientCityPK> {
   @NotNull
   private BigDecimal price;
 
+  @Override
+  public String toString() {
+    return "Freight{" +
+        "id=" + id +
+        ", description='" + description + '\'' +
+        ", weight=" + weight +
+        ", price=" + price +
+        '}';
+  }
 }
