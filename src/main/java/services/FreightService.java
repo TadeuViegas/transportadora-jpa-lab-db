@@ -1,5 +1,6 @@
 package services;
 
+import entities.ClientCityPK;
 import entities.Freight;
 import repositories.FreightRepository;
 
@@ -13,7 +14,7 @@ public class FreightService {
     this.freightRepository = freightRepository;
   }
 
-  public Optional<Freight> findFreightById(Long id) {
+  public Optional<Freight> findFreightById(ClientCityPK id) {
     return freightRepository.findById(id);
   }
 

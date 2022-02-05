@@ -18,20 +18,10 @@ import java.math.BigDecimal;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Freight implements BaseEntity<Long> {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+public class Freight implements BaseEntity<ClientCityPK> {
 
-  @ManyToOne
-  @JoinColumn(name = "codigo_cidade", nullable = false)
-  @NotNull
-  private City city;
-
-  @ManyToOne
-  @JoinColumn(name = "codigo_cliente", nullable = false)
-  @NotNull
-  private Client client;
+  @EmbeddedId
+  private ClientCityPK id = new ClientCityPK();
 
   @Column(name = "descricao", length = 30, nullable = false)
   @NotBlank
